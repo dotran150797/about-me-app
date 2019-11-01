@@ -1,5 +1,4 @@
-.app {
-    display: flex;
+ .app {
     &__navbar {
         flex: 20%;
         background-color: #191d2b;
@@ -7,6 +6,10 @@
         color: #8a91a7;
         display: flex;
         flex-direction: column;
+        position: fixed;
+        width: 250px;
+        z-index: 100;
+        top: 0;
         .navbar__image {
             flex: 20%;
             display: flex;
@@ -22,6 +25,7 @@
                 border: 7px solid #2e344e;
                 width: 200px;
                 height: 200px;
+                cursor: pointer;
             }
         }
         
@@ -45,9 +49,23 @@
                     text-align: center;
                     transition: all .3s;
                 }
+                
+                a:after {
+                    content: '';
+                    width: 0px;
+                    height: 1px;
+                    background: #738be4;
+                    transition: .4s;
+                    display: block;
+                }
 
                 a:hover {
                     color: #738be4;
+                    transform: translateY(-10px);
+                }
+
+                a:hover:after {
+                    width: 100%;
                 }
             }
         }
@@ -62,6 +80,74 @@
 
     &__main-content {
         flex: 80%;
+        margin-left: 260px;
+        box-sizing: border-box;
     }
+
+    .home-content {
+        color:#fff;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+
+        &__hello span {
+            color:hsl(210, 100%, 51%);
+        }
+
+        &__intro {
+            font-size: 20px;
+        }
+
+        &__social-icons {
+            list-style: none;
+            li {
+                display: inline-block;
+                margin: 0 15px;
+                border: 2px rgb(156, 118, 118) solid;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                transition: transform .4s;
+
+                i {
+                    margin: 0 auto;
+                    color: #fff;
+                    transform: translateY(5px);
+                }
+            }
+            li:hover {
+                transform: scale(1.5,1.5);
+            }
+        }
+    }
+
+    // &__main-content:before {
+    //     background: url(http://preview.itgeeksin.com/O2-club/assets/img/preview/snow-2.png),
+    //      url(http://preview.itgeeksin.com/O2-club/assets/img/preview/snow-3.png);
+    //      height: 100%;
+    //      left: 0;
+    //      position: absolute;
+    //      content: "";
+    //      top: 0;
+    //      width: 100%;
+    //      z-index: 1;
+    //      animation: snow 10s linear infinite;
+    //   }
+    
 }
+// @keyframes snow {
+//     0%{
+//       background-position:0 0,0 0;
+//     }
+//     50%{
+//       background-position:100px 200px,-100px 150px;
+//     }
+//     100%{
+//       background-position:200px 400px,-100px 300px;
+//     }
+// }
 
