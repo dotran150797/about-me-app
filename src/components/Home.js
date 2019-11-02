@@ -2,7 +2,7 @@ import React from "react";
 
 export const Home = () => {
   return (
-    <div class="app__main-content">
+    <div className="app__main-content">
       <div className="home-content">
         <div className="home-content__hello">
           <h1>
