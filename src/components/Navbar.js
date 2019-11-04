@@ -34,7 +34,7 @@ export const Navbar = () => {
           <div className="navbar__image">
             <img />
           </div>
-          <i class="fa fa-times-circle close-btn" onClick={handleClose}></i>
+          <i className="fa fa-times-circle close-btn" onClick={handleClose}></i>
           <div className="navbar__menu">
             <div className="menu__list-item">
               <Link to={process.env.PUBLIC_URL + "/"}>Home</Link>
