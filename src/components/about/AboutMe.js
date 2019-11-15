@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import { jsxFragment } from "@babel/types";
 
 export const AboutMe = () => {
   const info = [
@@ -9,15 +10,15 @@ export const AboutMe = () => {
     },
     {
       key: 'Age',
-      value: '24 Years'
+      value: '22 Years'
     },
     {
       key: 'Nationality',
-      value: 'American'
+      value: 'Viet Nam'
     },
     {
       key: 'Address',
-      value: '121 King Street, Melbourne, Victoria 3000, Australia'
+      value: 'An Giang'
     },
     {
       key: 'Freelance',
@@ -26,10 +27,14 @@ export const AboutMe = () => {
   ];
 
   const listInfo = info.map( (item,index) => 
-    <tr key={index}>
-      <th className='table--left'>{item.key} :</th>
-      <th className='table--right'>{item.value}</th>
-    </tr>
+    <React.Fragment key={index}>
+      <p>{item.key} :</p>
+    </React.Fragment>
+  );
+  const listInfoDetails = info.map( (item,index) => 
+    <React.Fragment key={index}>
+      <p>{item.value}</p>
+    </React.Fragment>
   );
   return (
     <div className="about-me">
@@ -48,13 +53,14 @@ export const AboutMe = () => {
             perfect design. I also make website more & more interactive with web
             animations.
           </p>
-          <table className="about-me__info">
-            <tbody>
-              {
-                listInfo
-              }
-            </tbody>
-          </table>
+          <div className="info">
+            <div className="info-title">
+              {listInfo}
+            </div>
+            <div className="info-details">
+              {listInfoDetails}
+            </div>
+          </div>
         </div>
       </div>
     </div>

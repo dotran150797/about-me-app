@@ -30,11 +30,12 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            flex: 40%;
+            width: 30%;
+            height: auto;
         }
         .about-me__content {
             flex: 60%;
-
+            margin-left: 25px;
             h3 {
                 font-size: 40px;
             }
@@ -43,11 +44,12 @@
               color:hsl(210, 100%, 51%);
             }
 
-            .table--left {
-                float: left;
-            }
-            .table--right {
-                text-align: center;
+            .info {
+                display: flex;
+                
+                .info-details {
+                    margin-left: 5em;
+                }
             }
         }
     }
